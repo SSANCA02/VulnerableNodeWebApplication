@@ -46,7 +46,7 @@
 // import axios
 import axios from "axios";
 import Notification from "~/components/Notification";
-//import Cookies from "js-cookie";
+import Cookies from "js-cookie";
 
 export default {
   components: {
@@ -68,7 +68,7 @@ export default {
                 email: this.email
               });
         
-        console.log(response.data[0].role);/*
+        console.log(response.data[0].role);
         if(response.data[0].role== 'suspended'){
                 this.suspend= true;
         }else{
@@ -77,19 +77,20 @@ export default {
             this.youarein= true;
             const user = response.data[0].iduser
             Cookies.set("userLogged",(user));
+            console.log(user);
           }
           this.$router.go("/");
-        } */
+        } 
       } catch (err) {
         console.log(err);
       }
     },
-  },/*
+  },
   computed: {
     userLogged() {
       return (Cookies.get("userLogged"));
      }
-  }*/
+  }
 };
 </script>
 

@@ -11,20 +11,20 @@
       
       <ul class="navbar-nav ml-auto">
           
-          <nuxt-link  class="nav-link" to="/users"> <icon-base icon-name="Register"><icon-register /></icon-base>Users</nuxt-link>
-          <nuxt-link  class="nav-link" to="/myposts"> <icon-base icon-name="Register"><icon-register /></icon-base>My posts</nuxt-link>
-          <nuxt-link  class="nav-link" to="/createpost"> <icon-base icon-name="Register"><icon-register /></icon-base> Create post</nuxt-link>
-          <nuxt-link  class="nav-link" to="/profile"> <icon-base icon-name="Profile"><icon-profile /></icon-base> My profile</nuxt-link>
+          <nuxt-link v-if="userLogged" class="nav-link" to="/users"> <icon-base icon-name="Register"><icon-register /></icon-base>Users</nuxt-link>
+          <nuxt-link v-if="userLogged" class="nav-link" to="/myposts"> <icon-base icon-name="Register"><icon-register /></icon-base>My posts</nuxt-link>
+          <nuxt-link v-if="userLogged" class="nav-link" to="/createpost"> <icon-base icon-name="Register"><icon-register /></icon-base> Create post</nuxt-link>
+          <nuxt-link v-if="userLogged" class="nav-link" to="/profile"> <icon-base icon-name="Profile"><icon-profile /></icon-base> My profile</nuxt-link>
           
-          <div >
+          <div v-if="userLogged">
             <a class="nav-link" @click="logout"> <icon-base icon-name="Login"><icon-login /></icon-base>Logout</a>
             
           </div>
           
-          <!--<template v-else> -->
+          <template v-else> 
             <nuxt-link class="nav-link" to="/register"> <icon-base icon-name="Register"><icon-register /></icon-base> Register</nuxt-link>
             <nuxt-link class="nav-link" to="/login"> <icon-base icon-name="Login"><icon-login /></icon-base> Log In</nuxt-link>
-          <!--</template>-->
+          </template>
        </ul>
       
     </div>
@@ -36,7 +36,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-//import Cookies from "js-cookie";
+import Cookies from "js-cookie";
 
 export default {
   data(){
@@ -46,13 +46,13 @@ export default {
       },
       
     }
-  }, /*
+  }, 
   computed: {
-    ...mapGetters(["isAuthenticated", "loggedInUser"]),
+   // ...mapGetters(["isAuthenticated", "loggedInUser"]),
     userLogged() {
       return Cookies.get("userLogged");
     }
-  },*/
+  },
   mounted() {
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(
@@ -73,13 +73,13 @@ export default {
         });
       });
     }
-  }, /*
+  }, 
   methods: {
     async logout() {
       Cookies.remove('userLogged');
       this.$router.push("/");
       this.$router.go();
     }
-  } */
+  } 
 };
 </script>

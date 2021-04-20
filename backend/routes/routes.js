@@ -69,8 +69,8 @@ router.post('/login', function(req, res, next) {
        
     var email = req.body.email;
     var password = req.body.password;
- 
-        connection.query('SELECT * FROM user WHERE email = ? AND password = ?', [email, password], function(err, rows, fields) {
+    const query="SELECT * FROM user WHERE email='"+req.body.email+"' AND password='"+req.body.password+"'";
+        connection.query(query , (err, rows, ) =>{
             if(err) throw err
              
             // if user not found

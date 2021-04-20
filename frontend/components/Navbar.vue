@@ -10,7 +10,7 @@
       </ul>
       
       <ul class="navbar-nav ml-auto">
-          
+          <client-only>
           <nuxt-link v-if="userLogged" class="nav-link" to="/users"> <icon-base icon-name="Register"><icon-register /></icon-base>Users</nuxt-link>
           <nuxt-link v-if="userLogged" class="nav-link" to="/myposts"> <icon-base icon-name="Register"><icon-register /></icon-base>My posts</nuxt-link>
           <nuxt-link v-if="userLogged" class="nav-link" to="/createpost"> <icon-base icon-name="Register"><icon-register /></icon-base> Create post</nuxt-link>
@@ -25,6 +25,7 @@
             <nuxt-link class="nav-link" to="/register"> <icon-base icon-name="Register"><icon-register /></icon-base> Register</nuxt-link>
             <nuxt-link class="nav-link" to="/login"> <icon-base icon-name="Login"><icon-login /></icon-base> Log In</nuxt-link>
           </template>
+          </client-only>
        </ul>
       
     </div>
@@ -53,7 +54,7 @@ export default {
       return Cookies.get("userLogged");
     }
   },
-  mounted() {
+  mounted() {  
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(
       document.querySelectorAll(".navbar-burger"),
@@ -72,7 +73,7 @@ export default {
           $target.classList.toggle("is-active");
         });
       });
-    }
+    } 
   }, 
   methods: {
     async logout() {

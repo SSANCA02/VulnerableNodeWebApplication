@@ -13,7 +13,7 @@
               <label class="label">Email</label>
 
               
-               <input type="email" class="input form-control" name="email" v-model="email">
+               <input type="text" class="input form-control" name="email" v-model="email">
               
             </div>
 
@@ -22,12 +22,9 @@
 
               <input type="password" class="input form-control" name="password" v-model="password">
              
-               <div class="controlcheckbox">
-                <label for="rempassword" class="checkbox"> <input type="checkbox" id="rempassword" name="remember" value="rempassword"> Remember password</label>
-              </div>
             </div>
 
-            <div class="control">
+            <div class="control mt-5">
               <button type="submit" class="btn btn-info btn-block">Log In</button>
             </div>
           </form>
@@ -82,7 +79,7 @@ export default {
           this.$router.go("/");
         } 
       } catch (err) {
-        console.log(err);
+        this.error = err;
       }
     },
   },

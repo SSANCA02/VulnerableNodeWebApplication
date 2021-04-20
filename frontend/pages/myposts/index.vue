@@ -70,6 +70,7 @@ import axios from "axios";
         },
         computed: {
             userLogged() {
+              console.log(Cookies.get("userLogged"));
             return Cookies.get("userLogged");
             }
         }

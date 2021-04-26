@@ -1,5 +1,7 @@
 <template>
-    <div class="container contact-form">
+<div>
+    <img v-if="!userLogged" class="mt-5 mb-5 center centerun" href="/" :src="require(`@/static/401.jpg`)">
+    <div v-if="userLogged" class="container contact-form">
             <div class="contact-image">
                 <img :src="require(`@/static/publication.png`)" alt="rocket_contact"/>
             </div>
@@ -39,6 +41,7 @@
                 
             </form>
 </div>
+</div>
 </template>
 
 
@@ -60,7 +63,7 @@ import Cookies from "js-cookie";
                 content: '',
                 picked: '',
                 file: '',
-                currentDateWithFormat: ''
+                currentDateWithFormat: '',
             }
         },
         methods: {
@@ -107,3 +110,13 @@ import Cookies from "js-cookie";
         }
     }
 </script>
+
+<style>
+
+.centerun {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>

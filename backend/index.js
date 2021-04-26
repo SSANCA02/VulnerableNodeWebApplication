@@ -10,7 +10,7 @@ import Router from "./routes/routes.js";
 const app = express();
  
 var sessionMiddleware = session({
-    secret: 'keyboard cat',
+    secret: 'secret key',
     resave: true,
     saveUninitialized: true,
     cookie: {secure: false, httpOnly: false }

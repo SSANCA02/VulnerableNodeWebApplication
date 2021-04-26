@@ -27,7 +27,7 @@ router.get('/posts', showPosts);
 router.get('/postspublic', showPostPublic);
 
 // Get All posts by a user
-router.post('/myposts', function(req, res, next) {
+router.post('/myposts', auth, function(req, res, next) {
        
     var user_id = req.body.id;
         connection.query('SELECT * FROM post WHERE user_id = ?', [user_id], function(err, rows, fields) {
@@ -50,7 +50,7 @@ router.post('/myposts', function(req, res, next) {
 router.post('/post', createPost);
 
 // Get post by id from the post
-router.get('/myposts/:id',  showPostById);
+router.get('/myposts/:id', showPostById);
 
 // Update Post
 router.put('/post/:id', updatePost);
@@ -65,7 +65,7 @@ router.get('/users', auth, showUsers);
 router.post('/user', createUser);
 
 // Get user by id
-router.get('/users/:id', showUserById);
+router.get('/users/:id', auth, showUserById);
 
 // Edit User to suspend or activate
 router.put('/editUser/:id', editUser);
@@ -105,7 +105,8 @@ router.post('/login', function(req, res, next) {
 // Logout endpoint
 router.get('/logout', function (req, res) {
     req.session.destroy();
-    res.send("logout success!");
+    console.log("logout success!");
+    res.sendStatus(200);
 });
 
 // export default router

@@ -84,7 +84,7 @@ export default {
       } catch (error) {
         console.log(error);
       }
-
+      
       Cookies.remove('userLogged');
       
       this.$router.push("/");

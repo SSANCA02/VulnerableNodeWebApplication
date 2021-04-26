@@ -1,7 +1,7 @@
 <template>
         <!-- Page Content -->
   <div class="container">
-
+    <img v-if="unauthorized" class="mt-5 ml-auto center" href="/" :src="require(`@/static/401.jpg`)">
     <!-- Content Row -->
     <div class="row mt-5" >
       <div class="col-md-4 mb-5" v-for="post in posts" :key="post.id">
@@ -12,8 +12,8 @@
             <p class="card-text">{{post.content.substring(0,120)+"..."}}</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-green btn-sm" @click="$router.push({path:'/myposts/'+post.idpost})">See full post</a>
-            <a href="#" class="btn btn-warning btn-sm" @click="$router.push({path:'/myposts/edit/'+post.idpost})">Edit</a> 
+            <a href="#" class="btn btn-green btn-sm" @click="$router.push({path:'../view/'+post.idpost})">See full post</a>
+            <a href="#" class="btn btn-warning btn-sm" @click="$router.push({path:'../edit/'+post.idpost})">Edit</a> 
             <a href="#" class="btn btn-danger btn-sm" @click="deletePost(post.idpost)">Delete</a> 
             <a href="#" v-if="post.status==1" class="btn pull-right btn-danger btn-sm">Private</a>
             <a href="#" v-if="post.status==0" class="btn pull-right btn-info btn-sm">Public</a>
@@ -37,25 +37,39 @@ import Cookies from "js-cookie";
 import axios from "axios";
 
     export default {
-        name: 'Content',
+        name: 'MyPosts',
         data () {
           return{
             posts: [],
+            unauthorized: false,
           }
         },
         created(){
-          this.getPosts();
+          axios.post(`http://localhost:5000/myposts`)
+          .then((response) =>{
+            this.getPosts();
+          })
+          .catch((error) => {
+            if (error.response.status === 401) {
+              this.unauthorized=true;
+            } else {
+              this.getPosts();
+            }
+          })
+            
         },
         methods:{
           // Get All Products
           async getPosts() {
+                      console.log(this.userLogged[0]);
             try {
               const response = await axios.post(`http://localhost:5000/myposts`, {
                 id: this.userLogged[0],
               });
               this.posts = response.data;
+             // }
             } catch (err) {
-              console.log(err);
+                console.log(err);
             }
           },
           // Delete Post
@@ -70,9 +84,17 @@ import axios from "axios";
         },
         computed: {
             userLogged() {
-              console.log(Cookies.get("userLogged"));
             return Cookies.get("userLogged");
             }
         }
     }
 </script>
+
+
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>

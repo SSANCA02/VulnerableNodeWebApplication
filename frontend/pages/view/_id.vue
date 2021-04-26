@@ -1,7 +1,8 @@
 <template>
     <div class="container">
+    <img v-if="unauthorized" class="mt-5 mb-5 ml-auto center" href="/" :src="require(`@/static/401.jpg`)">
 <!-- Services section -->
-	<section id="what-we-do">
+	<section v-if="!unauthorized" id="what-we-do">
 		<div class="container-fluid">
 			<h2 class="section-title mb-2 h1"> - {{this.post.title}} -</h2>
 			<p class="text-center text-muted mt-4 ml-5 mr-5 h5"> {{this.post.brief}}</p>
@@ -23,10 +24,21 @@ import axios from "axios";
                 id: this.$route.params.id,
                 post: [],
                 user: [],
+                unauthorized: false
             }
         },
         created(){
-          this.getPost();
+          axios.post(`http://localhost:5000/myposts`)
+          .then((response) =>{
+            this.getPost();
+          })
+          .catch((error) => {
+            if (error.response.status === 401) {
+              this.unauthorized=true;
+            } else {
+              this.getPost();
+            }
+          })
         },
          methods:{
           // Get user info
@@ -51,3 +63,12 @@ import axios from "axios";
         },
     }
 </script>
+
+
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>

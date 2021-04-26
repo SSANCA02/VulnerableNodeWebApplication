@@ -1,5 +1,7 @@
 <template>
-    <div class="container contact-form">
+<div>
+    <img v-if="unauthorized" class="centerun mb-5 mt-5 ml-auto center" href="/" :src="require(`@/static/401.jpg`)">
+    <div v-if="!unauthorized" class="container contact-form">
             <div class="contact-image">
                 <img :src="require(`@/static/profile12.png`)" alt="rocket_contact"/>
             </div>
@@ -27,6 +29,7 @@
                         </div>
             </form>
 </div>
+</div>
 </template>
 
 <script>
@@ -42,11 +45,22 @@ import axios from "axios";
             password: '',
             password2: '',
             error: false,
-            youarein:false
+            youarein:false,
+            unauthorized:false
           }
         },
         created(){
-          this.getUser();
+          axios.get(`http://localhost:5000/users/1`)
+          .then((response) =>{
+            this.getUser();
+          })
+          .catch((error) => {
+            if (error.response.status === 401) {
+              this.unauthorized=true;
+            } else {
+              this.getUser();
+            }
+          })
         },
         methods:{
           // Get user info
@@ -149,5 +163,11 @@ body{
     background-color: #0062cc;
     border: none;
     cursor: pointer;
+}
+
+.centerun {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

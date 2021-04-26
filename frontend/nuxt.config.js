@@ -5,11 +5,11 @@ export default {
     port: 3000, // default: 3000
   },
   // Global page headers (https://go.nuxtjs.dev/config-head)
-  env: {
-    strapiBaseUri: process.env.API_URL || "http://localhost:5000"
-  },
+  //env: {
+  //  strapiBaseUri: process.env.API_URL || "http://localhost:5000"
+  //},
   head: {
-    title: 'wannabeplexicus',
+    title: 'VNWA',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -66,7 +66,7 @@ export default {
   /*
   ** Auth module configuration
   ** See https://auth.nuxtjs.org/schemes/local.html#options
-  */
+  
   auth: {
     strategies: {
       local: {
@@ -85,5 +85,5 @@ export default {
         }
       }
     }
-  }
+  }*/
 }

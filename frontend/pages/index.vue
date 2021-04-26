@@ -21,7 +21,7 @@
     <!-- Call to Action Well -->
     <div class="card  my-gradient text-white  my-5 py-4 text-center">
       <div class="card-body ">
-        <p class="text-white text-center m-0">Do you want to be part of our community and publish your own publications?  <router-link class="nav-link navbar-nav " :to="{ name: 'Login' }">Sign Up.</router-link></p>
+        <p class="text-white text-center m-0">Do you want to be part of our community and publish your own publications?  <nuxt-link class="nav-link navbar-nav" to="/login"> Log In</nuxt-link></p>
       </div>
     </div>
 

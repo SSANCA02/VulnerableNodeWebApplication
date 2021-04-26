@@ -23,16 +23,16 @@
           <h5 class="text-uppercase font-opensans-min">Top Vulnerabilities</h5>
 
           <ul class="list-unstyled mb-0">
-            <li>
+            <li><icon-base icon-name="Security"><icon-security /></icon-base>
               <a href="#!" class="text-white">Link 1</a>
             </li>
-            <li>
+            <li><icon-base icon-name="Security"><icon-security /></icon-base>
               <a href="#!" class="text-white">Link 2</a>
             </li>
-            <li>
+            <li><icon-base icon-name="Security"><icon-security /></icon-base>
               <a href="#!" class="text-white">Link 3</a>
             </li>
-            <li>
+            <li><icon-base icon-name="Security"><icon-security /></icon-base>
               <a href="#!" class="text-white">Link 4</a>
             </li>
           </ul>
@@ -44,16 +44,17 @@
           <h5 class="text-uppercase mb-0 font-opensans-min">Links</h5>
 
           <ul class="list-unstyled mt-2">
-            <li><i class="fa fa-github"></i>
+            <li><icon-base viewBox="0 0 28.88 28.203" icon-name="Security"><icon-github  /></icon-base>
               <a href="#!" class="text-white"> Github</a>
             </li>
-            <li><i class="fa fa-github"></i>
+            <li><icon-base viewBox="0 0 28.88 28.203" icon-name="Security"><icon-github  /></icon-base>
               <a href="#!" class="text-white"> Github</a>
             </li>
-            <li><i class="fa fa-github"></i>
+            <li><icon-base viewBox="0 0 28.88 28.203" icon-name="Security"><icon-github  /></icon-base>
               <a href="#!" class="text-white"> Github</a>
             </li>
-            <li><i class="fa fa-github"></i>
+            <li>
+            <icon-base viewBox="0 0 28.88 28.203" icon-name="Security"><icon-github  /></icon-base>
               <a href="#!" class="text-white"> Github</a>
             </li>
           </ul>
@@ -84,4 +85,6 @@
 .grey-background{
   background-color: grey;
 }
+
+
 </style>

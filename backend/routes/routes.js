@@ -8,6 +8,15 @@ import { addMessage} from "../controllers/message.js";
 // init express router
 const router = express.Router();
  
+// Authentication and Authorization Middleware
+var auth = function(req, res, next) {
+    console.log("auth" +req.session.role);
+    if (req.session.role)
+      return next();
+    else
+      return res.sendStatus(401);
+  };
+
 //Add message
 router.post('/message', addMessage);
 
@@ -50,7 +59,7 @@ router.put('/post/:id', updatePost);
 router.delete('/post/:id', deletePost);
 
 // Get All users
-router.get('/users', showUsers);
+router.get('/users', auth, showUsers);
 
 // Create New User
 router.post('/user', createUser);
@@ -82,15 +91,22 @@ router.post('/login', function(req, res, next) {
                 // render to views/user/edit.ejs template file
                // req.session.loggedin = true;
                 //req.session.name = name;
+                
+                req.session.role = rows[0].role;
                 console.log('Usuario logeado.');
                 res.send(rows);
  
             }            
         })
   
-})
+});
 
 
+// Logout endpoint
+router.get('/logout', function (req, res) {
+    req.session.destroy();
+    res.send("logout success!");
+});
 
 // export default router
 export default router;

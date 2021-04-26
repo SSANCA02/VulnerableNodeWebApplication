@@ -42,10 +42,12 @@
 <script>
 // import axios
 import axios from "axios";
+axios.defaults.withCredentials = true;
 import Notification from "~/components/Notification";
 import Cookies from "js-cookie";
 
 export default {
+  name: 'Login',
   components: {
     Notification,
   },

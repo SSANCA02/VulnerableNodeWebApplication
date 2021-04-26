@@ -2,6 +2,7 @@
         <!-- Page Content -->
   <div class="container">
 
+    <img v-if="unauthorized" class="mt-5 ml-auto center" href="/" :src="require(`@/static/401.jpg`)">
     <!-- Content Row -->
     <div class="row mt-5" >
       <div class="col-md-4 mb-5" v-for="user in users" :key="user.id">
@@ -36,12 +37,13 @@
 import Cookies from "js-cookie";
 // import axios
 import axios from "axios";
-
+axios.defaults.withCredentials = true;
     export default {
         name: 'Users',
         data () {
           return{
             users: [],
+            unauthorized: false,
           }
         },
         created(){
@@ -50,12 +52,17 @@ import axios from "axios";
         methods:{
           // Get All Products
           async getUsers() {
+            this.unauthorized= false;
             try {
               const response = await axios.get(`http://localhost:5000/users`, {
               });
               this.users = response.data;
             } catch (err) {
-              console.log(err);
+              if(err.response.status === 401){
+                this.unauthorized= true;
+              }else{
+                console.log(err);
+              }
             }
           },
           // Delete Post
@@ -87,3 +94,11 @@ import axios from "axios";
         }
     }
 </script>
+
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>

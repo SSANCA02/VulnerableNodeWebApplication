@@ -1,6 +1,7 @@
 const API_AUTH_URL = process.env.API_AUTH_URL || 'http://localhost:8082';
 
 export default {
+  //mode:'universal',
   server: {
     port: 3000, // default: 3000
   },

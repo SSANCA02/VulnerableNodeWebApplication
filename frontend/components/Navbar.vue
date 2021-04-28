@@ -10,12 +10,12 @@
       </ul>
       
       <ul class="navbar-nav ml-auto">
-          <client-only>
+         <client-only> 
           <nuxt-link v-if="userLogged" class="nav-link" to="/users"> <icon-base icon-name="Register"><icon-dashboard /></icon-base>Users</nuxt-link>
           <nuxt-link v-if="userLogged" class="nav-link" to="/myposts"> <icon-base icon-name="My posts"><icon-projects /></icon-base>My posts</nuxt-link>
           <nuxt-link v-if="userLogged" class="nav-link" to="/createpost"> <icon-base icon-name="Create post"><icon-reports /></icon-base> Create post</nuxt-link>
           <nuxt-link v-if="userLogged" class="nav-link" to="/profile"> <icon-base icon-name="Profile"><icon-profile /></icon-base> My profile</nuxt-link>
-          </client-only>
+         </client-only>
           <div v-if="userLogged">
             <a class="nav-link" @click="logout"> <icon-base icon-name="Login"><icon-login /></icon-base>Logout</a>
             
@@ -44,17 +44,19 @@ export default {
   data(){
     return {
       LOGO: {
-        banner: 'logoPlexicus.png'
+        banner: 'logoPlexicus.png',
       },
       
     }
   }, 
   computed: {
    // ...mapGetters(["isAuthenticated", "loggedInUser"]),
+   
     userLogged() {
-      return Cookies.get("userLogged");
+      return  Cookies.get("userLogged");
     }
   },
+  
   mounted() {  
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(

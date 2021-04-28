@@ -20,6 +20,24 @@ var auth = function(req, res, next) {
 //Add message
 router.post('/message', addMessage);
 
+router.get('/messages', auth, function(req, res, next) {
+       
+        connection.query('SELECT * FROM message', function(err, rows, fields) {
+            if(err) throw err
+             
+            // if user not found
+            if (rows.length <= 0) {
+                //req.flash('error', 'Please correct enter email and Password!')
+                res.send(404)
+            }
+            else { 
+                res.send(rows);
+ 
+            }            
+        })
+  
+});
+
 // Get All posts
 router.get('/posts', showPosts);
 
@@ -44,7 +62,7 @@ router.post('/myposts', auth, function(req, res, next) {
             }            
         })
   
-})
+});
 
 // Create posts
 router.post('/post', createPost);
@@ -80,6 +98,7 @@ router.post('/login', function(req, res, next) {
     var password = req.body.password;
     const query="SELECT * FROM user WHERE email='"+req.body.email+"' AND password='"+req.body.password+"'";
         connection.query(query , (err, rows, ) =>{
+            console.log(query);
             if(err) throw err
              
             // if user not found

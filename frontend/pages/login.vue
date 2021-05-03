@@ -75,7 +75,9 @@ export default {
             this.$router.push("/");
             this.youarein= true;
             const user = response.data[0].iduser
+            const role = response.data[0].role
             Cookies.set("userLogged",(user));
+            Cookies.set("role",(role));
             console.log(user);
           }
           this.$router.go("/");
@@ -89,6 +91,7 @@ export default {
     userLogged() {
       return (Cookies.get("userLogged"));
      }
+     
   }
 };
 </script>

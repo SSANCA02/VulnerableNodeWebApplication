@@ -96,15 +96,15 @@ router.post('/login', function(req, res, next) {
        
     var email = req.body.email;
     var password = req.body.password;
-    const query="SELECT * FROM user WHERE email='"+req.body.email+"' AND password='"+req.body.password+"'";
-        connection.query(query , (err, rows, ) =>{
+    const query="SELECT * FROM user WHERE email = '" + req.body.email + " ' AND password = '" + req.body.password + "'";
+        connection.query(query , (err, rows ) =>{
             console.log(query);
             if(err) throw err
              
             // if user not found
             if (rows.length <= 0) {
                 //req.flash('error', 'Please correct enter email and Password!')
-                res.send(404)
+                res.send(401);
             }
             else { // if user found
                 // render to views/user/edit.ejs template file

@@ -45,17 +45,17 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [  
-  '@nuxtjs/apollo',
+  //'@nuxtjs/apollo',
   '@nuxtjs/axios',
   '@nuxtjs/auth'
-  ],
+  ], /*
   apollo: {  
     clientConfigs: {
       default: {
         httpEndpoint: process.env.BACKEND_URL || "http://localhost:8082/graphql"
       }
     }
-  }, 
+  },  */
   axios: {
     baseURL: process.env.API_AUTH_URL
   }, 

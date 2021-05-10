@@ -36,7 +36,14 @@
         <h4><span class="badge badge-green">Showing results that match the title with: </span> <span class="badge badge-info" v-html="attack"></span></h4>
       </div>
     </div>
-
+<client-only> 
+  <!-- Easter Egg, global XSS
+F:   https://github.com/dotboris/vuejs-serverside-template-xss 
+  <div>
+     {{ constructor.constructor("alert('xss')")() }}
+  </div> -->
+   
+</client-only>
     <!-- Content Row -->
     <div class="row" >
       <div class="col-md-4 mb-5" v-for="post in posts.slice().reverse()" :key="post.id">

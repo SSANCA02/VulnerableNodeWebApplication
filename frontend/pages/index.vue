@@ -1,7 +1,7 @@
 <template>
     <!-- Page Content -->
   <div class="container">
-
+      
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
       <div class="col-lg-7">
@@ -22,6 +22,18 @@
     <div class="card  my-gradient text-white  my-5 py-4 text-center">
       <div class="card-body ">
         <p class="text-white text-center m-0">Do you want to be part of our community and publish your own publications?  <nuxt-link class="nav-link navbar-nav" to="/login"> Log In</nuxt-link></p>
+      </div>
+    </div>
+
+    <div class="form-group row my-5 py-4 text-center">
+      <div class="ml-5 col-xs-8">
+        <h4><span class="badge badge-green">Search</span></h4>
+      </div>
+      <div class="ml-5 col-xs-3">
+        <input class="form-control" v-model="attack"/>
+      </div>
+      <div class="ml-5 col-xs-8">
+        <h4><span class="badge badge-green">Showing results that match the title with: </span> <span class="badge badge-info" v-html="attack"></span></h4>
       </div>
     </div>
 
@@ -60,6 +72,7 @@ import axios from "axios";
           return{
             posts: [],
             postsreverse: [],
+            attack: 'jonh doe',
           }
         },
         created(){
@@ -110,6 +123,10 @@ import axios from "axios";
 .my-gradient{
   background-color: grey;
    background-image: linear-gradient(to right, rgba(93, 86, 86, 0), rgb(56, 51, 51));
+}
+
+.badge-green{
+  background-color:rgba(110, 158, 71, 0.959);
 }
   
 </style>

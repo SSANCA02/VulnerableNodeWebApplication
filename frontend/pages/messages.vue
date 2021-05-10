@@ -5,7 +5,7 @@
        <div class="col-md-4 mb-5" v-for="message in messages" :key="message.idcomment">
         <div class="card h-100">
           <div class="card-body">
-            <h2 class="card-title">{{message.name}}</h2>
+            <h2 v-html="message.name" class="card-title">{{message.name}}</h2>
             <h5>{{message.email}}</h5>
             <h5>{{message.created_at.substring(0,10)}}</h5>
             <h5>{{message.created_at.substring(11,16)}}</h5>

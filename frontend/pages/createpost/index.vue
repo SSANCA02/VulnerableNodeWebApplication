@@ -27,7 +27,7 @@
                                 <label class="custom-control-label" for="1">Private</label>
                             </div> 
                         </div>
-                        
+                        <p> You can use HTML tags in the body of your post!</p>
                         <div class="form-group">
                             <textarea name="txtContent"  v-model="content" class="form-control" placeholder="Content" style="width: 100%; height: 450px;"></textarea>
                         </div>

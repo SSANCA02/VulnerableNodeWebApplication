@@ -7,8 +7,8 @@
 			<h2 class="section-title mb-2 h1"> - {{this.post.title}} -</h2>
 			<p class="text-center text-muted mt-4 ml-5 mr-5 h5"> {{this.post.brief}}</p>
 			<p class="text-center text-info mt-4 ml-5 mr-5 h5"> {{this.user.name}} {{this.user.surname}}</p>
-            <div class="row mt-5 ml-5 mr-5 text-center">
-				{{this.post.content}}
+      <div class="row mt-5 ml-5 mr-5 text-center">
+				<p v-html="this.post.content"></p>
 			</div>
 		</div>	
 	</section>

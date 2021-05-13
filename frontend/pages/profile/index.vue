@@ -79,7 +79,7 @@ import axios from "axios";
             this.error=false;
              
               try {
-              await axios.put(`http://localhost:5000/editPassword/${this.userLogged[0]}`, {
+              await axios.post(`http://localhost:5000/editPassword`, {
                   password: this.password,
               });
                 

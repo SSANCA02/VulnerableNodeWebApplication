@@ -64,12 +64,13 @@ export const editUser = (req, res) => {
 // Update Post
 export const editPasswordUser = (req, res) => {
     const data  = req.body;
-    const id    = req.params.id;
+    const id    = req.session.userId;
     editPasswordUserById(data, id, (err, results) => {
         if (err){
             res.send(err);
         }else{
             res.json(results);
+            console.log("Password changed.");
         }
     });
 }

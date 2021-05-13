@@ -1,6 +1,6 @@
 # vnwa
  
-## Build Setup
+## Server Setup
 
 
 ```bash
@@ -10,6 +10,11 @@ $ cd backend
 # start backend
 $ node index
 ```
+## Database 
+
+Copy from database/db.sql
+
+## NuxtJS Setup
 
 ```bash
 # install dependencies

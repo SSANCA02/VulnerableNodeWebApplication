@@ -18,7 +18,7 @@ var sessionMiddleware = session({
   
 // use express json
 app.use(express.json());
- 
+app.use(express.urlencoded({ extended: true }))
 // use cors
 app.use(cors({
     credentials: true,

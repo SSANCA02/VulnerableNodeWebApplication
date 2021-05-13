@@ -11,7 +11,7 @@ const router = express.Router();
 // Authentication and Authorization Middleware
 var auth = function(req, res, next) {
     console.log("auth" +req.session.role);
-    if (req.session.role)
+    if (req.session.userId)
       return next();
     else
       return res.sendStatus(401);
@@ -89,7 +89,7 @@ router.get('/users/:id', auth, showUserById);
 router.put('/editUser/:id', editUser);
 
 // Edit User password
-router.put('/editPassword/:id', editPasswordUser);
+router.post('/editPassword', editPasswordUser);
 
 // Login
 router.post('/login', function(req, res, next) {
@@ -110,7 +110,7 @@ router.post('/login', function(req, res, next) {
                 // render to views/user/edit.ejs template file
                // req.session.loggedin = true;
                 //req.session.name = name;
-                
+                req.session.userId = rows[0].iduser;
                 req.session.role = rows[0].role;
                 console.log('Usuario logeado.');
                 res.send(rows);

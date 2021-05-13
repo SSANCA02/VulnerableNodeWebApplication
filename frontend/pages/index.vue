@@ -36,14 +36,18 @@
         <h4><span class="badge badge-green">Showing results that match the title with: </span> <span class="badge badge-info" v-html="attack"></span></h4>
       </div>
     </div>
-<client-only> 
+
   <!-- Easter Egg, global XSS
-F:   https://github.com/dotboris/vuejs-serverside-template-xss 
+  This just works injected like this.
+  In a true scenario, this will look like this:
+  s = 'constructor.constructor("alert('xss')")()'
+  {{ s }}
+  And the XSS will not be able to occur 
+
   <div>
      {{ constructor.constructor("alert('xss')")() }}
   </div> -->
    
-</client-only>
     <!-- Content Row -->
     <div class="row" >
       <div class="col-md-4 mb-5" v-for="post in posts.slice().reverse()" :key="post.id">
@@ -79,7 +83,7 @@ import axios from "axios";
           return{
             posts: [],
             postsreverse: [],
-            attack: 'jonh doe',
+            attack: '',
           }
         },
         created(){

@@ -38,7 +38,7 @@ export const showUserByEmail = (req, res) => {
 
 // Get Single User
 export const showUserById = (req, res) => {
-    getUserById(req.params.id, (err, results) => {
+    getUserById(req.session.userId, (err, results) => {
         if (err){
             res.send(err);
         }else{

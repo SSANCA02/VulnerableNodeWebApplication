@@ -61,11 +61,8 @@ import axios from "axios";
         methods:{
           // Get All Products
           async getPosts() {
-                      console.log(this.userLogged[0]);
             try {
-              const response = await axios.post(`http://localhost:5000/myposts`, {
-                id: this.userLogged[0],
-              });
+              const response = await axios.post(`http://localhost:5000/myposts`);
               this.posts = response.data;
              // }
             } catch (err) {
@@ -82,11 +79,6 @@ import axios from "axios";
             }
           },
         },
-        computed: {
-            userLogged() {
-            return Cookies.get("userLogged");
-            }
-        }
     }
 </script>
 

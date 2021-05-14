@@ -47,7 +47,7 @@ router.get('/postspublic', showPostPublic);
 // Get All posts by a user
 router.post('/myposts', auth, function(req, res, next) {
        
-    var user_id = req.body.id;
+    var user_id = req.session.userId;
         connection.query('SELECT * FROM post WHERE user_id = ?', [user_id], function(err, rows, fields) {
             if(err) throw err
              
@@ -83,7 +83,7 @@ router.get('/users', auth, showUsers);
 router.post('/user', createUser);
 
 // Get user by id
-router.get('/users/:id', auth, showUserById);
+router.get('/userbyid', auth, showUserById);
 
 // Edit User to suspend or activate
 router.put('/editUser/:id', editUser);

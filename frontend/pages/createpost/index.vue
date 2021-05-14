@@ -1,7 +1,7 @@
 <template>
 <div>
-    <img v-if="!userLogged" class="mt-5 mb-5 center centerun" href="/" :src="require(`@/static/401.jpg`)">
-    <div v-if="userLogged" class="container contact-form">
+    <img v-if="unauthorized" class="mt-5 mb-5 center centerun" href="/" :src="require(`@/static/401.jpg`)">
+    <div v-if="!unauthorized" class="container contact-form">
             <div class="contact-image">
                 <img :src="require(`@/static/publication.png`)" alt="rocket_contact"/>
             </div>
@@ -64,7 +64,21 @@ import Cookies from "js-cookie";
                 picked: '',
                 file: '',
                 currentDateWithFormat: '',
+                unauthorized: false
             }
+        },
+         created(){
+           axios.post(`http://localhost:5000/myposts`)
+          .then((response) =>{
+            this.getPost();
+          })
+          .catch((error) => {
+            if (error.response.status === 401) {
+              this.unauthorized=true;
+            } else {
+              this.getPost();
+            }
+          })
         },
         methods: {
             
@@ -82,7 +96,6 @@ import Cookies from "js-cookie";
                         content: this.content,
                         created_at: this.currentDateWithFormat,
                         status: this.picked,
-                        user_id: this.userLogged[0]
                         });
                         this.title = "";
                         this.brief = "";
@@ -102,11 +115,6 @@ import Cookies from "js-cookie";
                 var currentDateWithFormat = new Date().toJSON().split('T')[0] + ' ' + new Date().toJSON().split('T')[1].split('.')[0]
                 return currentDateWithFormat;
              }
-        },
-        computed: {
-            userLogged() {
-                return Cookies.get("userLogged");
-            }
         }
     }
 </script>

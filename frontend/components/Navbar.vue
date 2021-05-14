@@ -11,13 +11,13 @@
       
       <ul class="navbar-nav ml-auto">
          <client-only> 
-          <nuxt-link v-if="userLogged && role=='admin'" class="nav-link" to="/users"> <icon-base icon-name="Register"><icon-dashboard /></icon-base>Users</nuxt-link>
-          <nuxt-link v-if="userLogged && role=='admin'" class="nav-link" to="/messages"> <icon-base icon-name="Register"><icon-dashboard /></icon-base>Messages</nuxt-link>
-          <nuxt-link v-if="userLogged" class="nav-link" to="/myposts"> <icon-base icon-name="My posts"><icon-projects /></icon-base>My posts</nuxt-link>
-          <nuxt-link v-if="userLogged" class="nav-link" to="/createpost"> <icon-base icon-name="Create post"><icon-reports /></icon-base> Create post</nuxt-link>
-          <nuxt-link v-if="userLogged" class="nav-link" to="/profile"> <icon-base icon-name="Profile"><icon-profile /></icon-base> My profile</nuxt-link>
-         </client-only>
-          <div v-if="userLogged">
+          <nuxt-link v-if="role=='admin'" class="nav-link" to="/users"> <icon-base icon-name="Register"><icon-dashboard /></icon-base>Users</nuxt-link>
+          <nuxt-link v-if="role=='admin'" class="nav-link" to="/messages"> <icon-base icon-name="Register"><icon-dashboard /></icon-base>Messages</nuxt-link>
+          <nuxt-link v-if="role" class="nav-link" to="/myposts"> <icon-base icon-name="My posts"><icon-projects /></icon-base>My posts</nuxt-link>
+          <nuxt-link v-if="role" class="nav-link" to="/createpost"> <icon-base icon-name="Create post"><icon-reports /></icon-base> Create post</nuxt-link>
+          <nuxt-link v-if="role" class="nav-link" to="/profile"> <icon-base icon-name="Profile"><icon-profile /></icon-base> My profile</nuxt-link>
+         </client-only> 
+          <div v-if="role">
             <a class="nav-link" @click="logout"> <icon-base icon-name="Login"><icon-login /></icon-base>Logout</a>
             
           </div>
@@ -46,21 +46,17 @@ export default {
     return {
       LOGO: {
         banner: 'logoPlexicus.png',
+        unauthorized: '',
       },
       
     }
   }, 
   computed: {
    // ...mapGetters(["isAuthenticated", "loggedInUser"]),
-   
-    userLogged() {
-      return  Cookies.get("userLogged");
-    },
     role() {
       return (Cookies.get("role"));
      }
   },
-  
   mounted() {  
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(
@@ -92,7 +88,7 @@ export default {
       }
       
       Cookies.remove('userLogged');
-      
+      Cookies.remove('role');
       this.$router.push("/");
       this.$router.go();
       

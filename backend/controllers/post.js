@@ -15,6 +15,7 @@ export const showPosts = (req, res) => {
 // Create Post
 export const createPost = (req, res) => {
     const data= req.body;
+    data.user_id= req.session.userId;
     addPost(data, (err, results) => {
         if (err){
             res.send(err);

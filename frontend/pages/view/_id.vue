@@ -54,7 +54,7 @@ import axios from "axios";
            async getUser() {
             try {
                 
-              const response = await axios.get(`http://localhost:5000/users/${this.post.user_id}`);
+              const response = await axios.get(`http://localhost:5000/userbyid`);
               this.user = response.data[0];
             } catch (err) {
               console.log(err);

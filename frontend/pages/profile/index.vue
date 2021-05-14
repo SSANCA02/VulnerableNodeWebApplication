@@ -50,7 +50,7 @@ import axios from "axios";
           }
         },
         created(){
-          axios.get(`http://localhost:5000/users/1`)
+          axios.get(`http://localhost:5000/userbyid`)
           .then((response) =>{
             this.getUser();
           })
@@ -66,8 +66,7 @@ import axios from "axios";
           // Get user info
           async getUser() {
             try {
-                
-              const response = await axios.get(`http://localhost:5000/users/${this.userLogged[0]}`);
+              const response = await axios.get(`http://localhost:5000/userbyid`);
               this.user = response.data[0];
             } catch (err) {
               console.log(err);
@@ -92,11 +91,6 @@ import axios from "axios";
                 this.error=true;
             }
           }
-        },
-        computed: {
-            userLogged() {
-            return Cookies.get("userLogged");
-            }
         }
     }
 </script>

@@ -86,11 +86,6 @@ axios.defaults.withCredentials = true;
               console.log(err);
             }
           },
-        },
-        computed: {
-            userLogged() {
-            return Cookies.get("userLogged");
-            }
         }
     }
 </script>

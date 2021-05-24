@@ -58,7 +58,7 @@
             <p class="card-text">{{post.content.substring(0,120)+"..."}}</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-green btn-sm"  @click="$router.push({path:'/myposts/' + post.idpost })">See full post</a>
+            <a href="#" class="btn btn-green btn-sm"  @click="$router.push({path:'/view/' + post.idpost })">See full post</a>
           </div>
         </div>
       </div>

@@ -26,14 +26,15 @@ export const addUser = (data, result) => {
 }
 
 // Get Single user
-export const getUserByEmail = (email, password, result) => {
-    db.query("SELECT * FROM user WHERE email = ? AND password = ?", [email], [password], (err, results) => {             
+export const getUserByEmail = (email, result) => {
+    db.query("SELECT * FROM user WHERE email = ?", [email], (err, results) => {             
         if(err) {
+            console.log("hay error");
             console.log(err);
             result(err, null);
         } else {
-            console.log("log");
-            result(null, results[0]);
+            console.log("enviando resultados");
+            result(null, results);
         }
     });   
 }

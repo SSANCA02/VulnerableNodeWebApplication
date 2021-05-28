@@ -1,5 +1,5 @@
 <template>
-  <div :class="`is-${type}`" class="notification">
+  <div :class="` btn-lg mt-2 mb-2 btn-${type}`" class="notification">
     {{ message }}
   </div>
 </template>

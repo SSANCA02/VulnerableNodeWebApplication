@@ -7,13 +7,21 @@
           <Notification v-if="success" type="success" :message="success" />
           <Notification v-if="error" type="danger" :message="error" />
 
-          <form  v-if="!success" method="post" @submit.prevent="register">
+          <form  v-if="!success" method="post" @submit.prevent="isEmailUsed">
 
             <div class="field">
-              <label class="label">Username</label>
+              <label class="label">Name</label>
 
               <div class="control">
-                <input type="text" class="input form-control" name="username" v-model="username" required>
+                <input type="text" class="input form-control" name="name" v-model="name" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Surname</label>
+
+              <div class="control">
+                <input type="text" class="input form-control" name="surname" v-model="surname" required>
               </div>
             </div>
 
@@ -56,11 +64,13 @@ export default {
   },
   data() {
     return {
-      username: "",
+      name: "",
+      surname: "",
       email: "",
       password: "",
       success: null,
       error: null,
+      isemailused: true,
     };
   },
   methods: {
@@ -69,16 +79,33 @@ export default {
       try {
         this.$axios.setToken(false);
         await axios.post("http://localhost:5000/user", {
-                password: this.password,
-                name: this.name,
-                surname: this.surname,
-                role: 'user',
-                email: this.email
-              });
-        this.success = `Registration successful. \
-        Please log in.`;
+                  password: this.password,
+                  name: this.name,
+                  surname: this.surname,
+                  role: 'user',
+                  email: this.email
+                });
+          this.success = `Registration successful. \
+          Please log in.`;
       } catch (err) {
         console.log(err);
+      }
+    },
+    async isEmailUsed(){
+      try {
+        this.$axios.setToken(false);
+         axios.post("http://localhost:5000/userbyemail", {
+                  email: this.email
+                }).then((res) => {
+        if(res.data.length === 0 ){
+          this.register();
+        } else{
+          this.error = `Email is already in use`;   
+        }
+        });
+        
+      } catch (err) {
+          console.log(err);
       }
     },
   },

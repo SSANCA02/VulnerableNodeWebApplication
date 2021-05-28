@@ -26,11 +26,13 @@ export const createUser = (req, res) => {
 
 // Get Single User
 export const showUserByEmail = (req, res) => {
-    const {email, password} = req.body;
-    getUserByEmail(email, password, (err, results) => {
+    const {email} = req.body;
+    getUserByEmail(email, (err, results) => {
         if (err){
+            console.log("401");
             res.send(err);
         }else{
+            console.log("200");
             res.json(results);
         }
     });

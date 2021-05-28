@@ -80,7 +80,28 @@ export default {
           this.$router.go("/");
         } 
       } catch (err) {
-        this.error = err;
+        if(err.response.status == 401){
+          this.isEmailUsed();
+        } else {
+          this.error = err;
+        }
+      }
+    },
+    async isEmailUsed(){
+      try {
+        this.$axios.setToken(false);
+         axios.post("http://localhost:5000/userbyemail", {
+                  email: this.email
+                }).then((res) => {
+        if(res.data.length === 0 ){
+          this.error = 'Wrong credentials';
+        } else{
+          this.error = `Incorrect password`;   
+        }
+        });
+        
+      } catch (err) {
+          console.log(err);
       }
     },
   }

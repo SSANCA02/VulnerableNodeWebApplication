@@ -3,7 +3,7 @@ import express from "express";
 import connection from "../config/database.js";
 // import function from controller
 import { showPosts, createPost, showPostById, showMyPosts, showPostPublic, updatePost, deletePost} from "../controllers/post.js";
-import { showUsers, createUser, showUserById, editUser, editPasswordUser} from "../controllers/user.js";
+import { showUsers, createUser, showUserByEmail, showUserById, editUser, editPasswordUser} from "../controllers/user.js";
 import { addMessage} from "../controllers/message.js";
 // init express router
 const router = express.Router();
@@ -81,6 +81,9 @@ router.get('/users', auth, showUsers);
 
 // Create New User
 router.post('/user', createUser);
+
+// Get user by email
+router.post('/userbyemail', showUserByEmail);
 
 // Get user by id
 router.get('/userbyid', auth, showUserById);

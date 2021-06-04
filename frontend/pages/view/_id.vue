@@ -28,18 +28,19 @@ import axios from "axios";
             }
         },
         created(){
-          axios.post(`http://localhost:5000/myposts`)
-          .then((response) =>{
+        /* create middleware and check if the post is public 
+         axios.post(`http://localhost:5000/public or is author`)
+          .then((response) =>{ */
             this.getPost();
-          })
+        /*  })
           .catch((error) => {
             if (error.response.status === 401) {
               this.unauthorized=true;
             } else {
               this.getPost();
             }
-          })
-        },
+          })*/
+        }, 
          methods:{
           // Get user info
           async getPost() {

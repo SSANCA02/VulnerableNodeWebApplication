@@ -1,6 +1,6 @@
 // Import function from Product Model
 import { getUsers, addUser, getUserByEmail, getUserById, editUserById, editPasswordUserById } from "../models/userModel.js";
- 
+import {logger} from "../routes/routes.js"
 // Get All Posts
 export const showUsers = (req, res) => {
     getUsers((err, results) => {
@@ -20,6 +20,13 @@ export const createUser = (req, res) => {
             res.send(err);
         }else{
             res.json(results);
+            logger.log({
+                // Message to be logged
+                    message: 'User registered: ' +req.body.email,
+                
+                // Level of the message logging
+                    level: 'info'
+             });
         }
     });
 }
@@ -73,6 +80,13 @@ export const editPasswordUser = (req, res) => {
         }else{
             res.json(results);
             console.log("Password changed.");
+            logger.log({
+                // Message to be logged
+                    message: 'User password changed.',
+                
+                // Level of the message logging
+                    level: 'warn'
+             });
         }
     });
 }

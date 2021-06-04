@@ -5,9 +5,20 @@ import connection from "../config/database.js";
 import { showPosts, createPost, showPostById, showMyPosts, showPostPublic, updatePost, deletePost} from "../controllers/post.js";
 import { showUsers, createUser, showUserByEmail, showUserById, editUser, editPasswordUser} from "../controllers/user.js";
 import { addMessage} from "../controllers/message.js";
+import winston from "winston";
+
 // init express router
 const router = express.Router();
- 
+const logConfiguration = {
+    'transports': [
+        new winston.transports.File({
+            filename: 'logs/logger.log'
+        })
+    ]
+};
+
+export const logger = winston.createLogger(logConfiguration);
+
 // Authentication and Authorization Middleware
 var auth = function(req, res, next) {
     console.log("auth" +req.session.role);
@@ -117,7 +128,15 @@ router.post('/login', function(req, res, next) {
                 req.session.role = rows[0].role;
                 console.log('Usuario logeado.');
                 res.send(rows);
- 
+                
+                logger.log({
+                    // Message to be logged
+                        message: 'User logged!',
+                    
+                    // Level of the message logging
+                        level: 'info'
+                 });
+                
             }            
         })
   
@@ -128,6 +147,13 @@ router.post('/login', function(req, res, next) {
 router.get('/logout', function (req, res) {
     req.session.destroy();
     console.log("logout success!");
+    logger.log({
+        // Message to be logged
+            message: 'User log out',
+        
+        // Level of the message logging
+            level: 'info'
+     });
     res.sendStatus(200);
 });
 

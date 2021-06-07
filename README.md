@@ -1,5 +1,7 @@
-# vnwa
- 
+# VNWA - VulnerableNodeWebApplication
+
+A vulnerable application you can use to learn main vulnerabilities and test your security applications! It uses MySQL + NodeJS + ExpressJS + Axios + NuxtJS
+
 ## Server Setup
 
 
@@ -9,10 +11,38 @@ $ cd backend
 
 # start backend
 $ node index
+
+# preventing NodeJS to crash
+$ npm install forever -g
+$ forever start index.js
+
+#if NodeJS unexepcted token import
+$ node -r esm index.js
 ```
 ## Database 
 
-Copy from database/db.sql
+This is only a guide for those who do not have MySQL installed.
+```bash
+#Install mysql 
+$ sudo apt-get install mysql-server
+$ sudo mysql
+$ sudo snap install mysql-workbench-community
+#change auth_socket a mysql_native_password:
+$ sudo mysql -u root -p
+mysql> use mysql
+mysql> SELECT User, Host, plugin FROM mysql.user;
+mysql> UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+mysql> FLUSH PRIVILEGES;
+#generate password
+mysqladmin -u root password yourpassword
+#if you enter the MySQL application and appears Cannot Connect to Database Sever
+$ snap connect mysql-workbench-community:password-manager-service
+$ snap connect mysql-workbench-community:ssh-keys
+
+```
+
+If you have MySQL installed, you can copy from database/db.sql.
+
 
 ## NuxtJS Setup
 

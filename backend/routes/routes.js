@@ -97,7 +97,7 @@ router.post('/user', createUser);
 router.post('/userbyemail', showUserByEmail);
 
 // Get user by id
-router.get('/userbyid', auth, showUserById);
+router.post('/userbyid', showUserById);
 
 // Edit User to suspend or activate
 router.put('/editUser/:id', editUser);

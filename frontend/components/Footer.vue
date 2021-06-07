@@ -24,16 +24,16 @@
 
           <ul class="list-unstyled mb-0">
             <li><icon-base icon-name="Security"><icon-security /></icon-base>
-              <a href="#!" class="text-white">Link 1</a>
+              <a href="#!" class="text-white">A1-Injection</a>
             </li>
             <li><icon-base icon-name="Security"><icon-security /></icon-base>
-              <a href="#!" class="text-white">Link 2</a>
+              <a href="#!" class="text-white">A2-Broken Authentication</a>
             </li>
             <li><icon-base icon-name="Security"><icon-security /></icon-base>
-              <a href="#!" class="text-white">Link 3</a>
+              <a href="#!" class="text-white">A3-Sensitive Data Exposure</a>
             </li>
             <li><icon-base icon-name="Security"><icon-security /></icon-base>
-              <a href="#!" class="text-white">Link 4</a>
+              <a href="#!" class="text-white">A5-Broken Access Control</a>
             </li>
           </ul>
         </div>
@@ -45,17 +45,10 @@
 
           <ul class="list-unstyled mt-2">
             <li><icon-base viewBox="0 0 28.88 28.203" icon-name="Security"><icon-github  /></icon-base>
-              <a href="#!" class="text-white"> Github</a>
+              <a href="#!" class="text-white"> Github Repository</a>
             </li>
             <li><icon-base viewBox="0 0 28.88 28.203" icon-name="Security"><icon-github  /></icon-base>
-              <a href="#!" class="text-white"> Github</a>
-            </li>
-            <li><icon-base viewBox="0 0 28.88 28.203" icon-name="Security"><icon-github  /></icon-base>
-              <a href="#!" class="text-white"> Github</a>
-            </li>
-            <li>
-            <icon-base viewBox="0 0 28.88 28.203" icon-name="Security"><icon-github  /></icon-base>
-              <a href="#!" class="text-white"> Github</a>
+              <a href="#!" class="text-white"> Github Wiki</a>
             </li>
           </ul>
         </div>
@@ -68,7 +61,7 @@
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2020 Copyright:
-      <a class="text-white" href="#!">MDBootstrap.com</a>
+      <a class="text-white" href="#!">SSANCA02 github</a>
     </div>
     <!-- Copyright -->
   </footer>

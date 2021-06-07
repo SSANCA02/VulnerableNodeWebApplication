@@ -11,7 +11,7 @@
       <div  class="col-lg-5">
         <h1 class="font-weight-light font-opensans">{{ postsreverse.title}}</h1>
         <p >{{ postsreverse.brief}}</p>
-         <a class="btn btn-green" href="#" @click="$router.push({path:'/myposts/' + posts.slice().reverse()[0].idpost })">See full post</a>
+         <a class="btn btn-green" href="#" @click="$router.push({path:'/view/' + posts.slice().reverse()[0].idpost })">See full post</a>
         
       </div>
       <!-- /.col-md-4 -->

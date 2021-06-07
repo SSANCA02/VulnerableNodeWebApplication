@@ -10,7 +10,7 @@
 					<div class="card">
 						<div class="card-block block-1">
 							<h3 class="card-title">SQL injection</h3>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							<p class="card-text">SQL injection is a method of injecting intrusive code to perform operations on a database.</p>
 							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
@@ -19,7 +19,7 @@
 					<div class="card">
 						<div class="card-block block-2">
 							<h3 class="card-title">Cross-Site Scripting (XSS)</h3>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							<p class="card-text">XSS is a type of client-side code injection attack, where an attacker executes a malicious script in a user's browser.</p>
 							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
@@ -28,7 +28,7 @@
 					<div class="card">
 						<div class="card-block block-3">
 							<h3 class="card-title">CSRF</h3>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							<p class="card-text">CSRF occurs when unauthorized commands are submitted from a user that the web application trusts.</p>
 							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
@@ -38,8 +38,8 @@
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
 					<div class="card">
 						<div class="card-block block-4">
-							<h3 class="card-title">Authentication, authorization and session issues</h3>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							<h3 class="card-title">Broken Authentication</h3>
+							<p class="card-text">Weak passwords, weak session ID keys, brute force or other automated attacks...</p>
 							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
@@ -47,8 +47,8 @@
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
 					<div class="card">
 						<div class="card-block block-5">
-							<h3 class="card-title">Configuration issues</h3>
-							<p class="card-text">Man-in-the-Middle, cross-domain policy files, information disclosures,...</p>
+							<h3 class="card-title">Sensitive Data Exposure</h3>
+							<p class="card-text">Is any data transmitted in clear text? Man-in-the-Middle, information disclosures,...</p>
 							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
@@ -56,8 +56,37 @@
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
 					<div class="card">
 						<div class="card-block block-6">
-							<h3 class="card-title">Cookie and password reset poisoning</h3>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							<h3 class="card-title">Broken Access Control</h3>
+							<p class="card-text">Bypassing access control checks by modifying the URL or similar.</p>
+							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+					<div class="card">
+						<div class="card-block block-1">
+							<h3 class="card-title">Security Misconfiguration</h3>
+							<p class="card-text">Error handling reveals stack traces or other overly informative error messages to users.</p>
+							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+					<div class="card">
+						<div class="card-block block-2">
+							<h3 class="card-title">Using Components with Known Vulnerabilities</h3>
+							<p class="card-text">Using software vulnerable, unsupported, or out of date.</p>
+							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+					<div class="card">
+						<div class="card-block block-3">
+							<h3 class="card-title">Insufficient Logging & Monitoring</h3>
+							<p class="card-text">Exploitation of insufficient logging and monitoring is the bedrock of nearly every major incident.</p>
 							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>

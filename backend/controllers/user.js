@@ -44,10 +44,9 @@ export const showUserByEmail = (req, res) => {
         }
     });
 }
-
 // Get Single User
 export const showUserById = (req, res) => {
-    getUserById(req.session.userId, (err, results) => {
+    getUserById(req.body.id, (err, results) => {
         if (err){
             res.send(err);
         }else{
@@ -55,6 +54,17 @@ export const showUserById = (req, res) => {
         }
     });
 }
+
+// Get Single User
+/*export const showUserById = (req, res) => {
+    getUserById(req.session.userId, (err, results) => {
+        if (err){
+            res.send(err);
+        }else{
+            res.json(results);
+        }
+    });
+} */
 
 // Update Post
 export const editUser = (req, res) => {

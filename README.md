@@ -1,6 +1,13 @@
 # VNWA - VulnerableNodeWebApplication
 
-A vulnerable application you can use to learn main vulnerabilities and test your security applications! It uses MySQL + NodeJS + ExpressJS + Axios + NuxtJS
+A vulnerable application you can use to learn main vulnerabilities and test your security applications!
+
+ It uses MySQL + NodeJS + ExpressJS + Axios + NuxtJS.
+
+
+# Vulnerabilities and Solutions
+
+* [VNWA wiki](https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki)
 
 ## Server Setup
 

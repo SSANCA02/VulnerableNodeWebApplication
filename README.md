@@ -4,7 +4,7 @@ A vulnerable application you can use to learn main vulnerabilities and test your
 
  It uses MySQL + NodeJS + ExpressJS + Axios + NuxtJS.
 
-![View Main Page](https://imagizer.imageshack.com/img923/4945/CLSIJA.png | width=50)
+![View Main Page](https://imagizer.imageshack.com/img923/4945/CLSIJA.png)
 
 # Vulnerabilities and Solutions
 

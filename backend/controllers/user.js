@@ -56,7 +56,7 @@ export const showUserById = (req, res) => {
 }
 
 // Get Single User
-/*export const showUserById = (req, res) => {
+export const showUserById2 = (req, res) => {
     getUserById(req.session.userId, (err, results) => {
         if (err){
             res.send(err);
@@ -64,7 +64,7 @@ export const showUserById = (req, res) => {
             res.json(results);
         }
     });
-} */
+} 
 
 // Update Post
 export const editUser = (req, res) => {

@@ -3,7 +3,7 @@ import express from "express";
 import connection from "../config/database.js";
 // import function from controller
 import { showPosts, createPost, showPostById, showMyPosts, showPostPublic, updatePost, deletePost} from "../controllers/post.js";
-import { showUsers, createUser, showUserByEmail, showUserById, editUser, editPasswordUser} from "../controllers/user.js";
+import { showUsers, createUser, showUserByEmail, showUserById, showUserById2, editUser, editPasswordUser} from "../controllers/user.js";
 import { addMessage} from "../controllers/message.js";
 import winston from "winston";
 
@@ -98,6 +98,9 @@ router.post('/userbyemail', showUserByEmail);
 
 // Get user by id
 router.post('/userbyid', showUserById);
+
+// Get user by id
+router.get('/userbyid', showUserById2);
 
 // Edit User to suspend or activate
 router.put('/editUser/:id', editUser);

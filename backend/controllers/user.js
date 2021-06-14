@@ -57,6 +57,9 @@ export const showUserById = (req, res) => {
 
 // Get Single User
 export const showUserById2 = (req, res) => {
+    if(!req.session.userId){
+        res.send(401);
+    } else 
     getUserById(req.session.userId, (err, results) => {
         if (err){
             res.send(err);

@@ -57,8 +57,6 @@ import axios from "axios";
           .catch((error) => {
             if (error.response.status === 401) {
               this.unauthorized=true;
-            } else {
-              this.getUser();
             }
           })
         },

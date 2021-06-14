@@ -5,10 +5,6 @@ export default {
   server: {
     port: 3000, // default: 3000
   },
-  // Global page headers (https://go.nuxtjs.dev/config-head)
-  //env: {
-  //  strapiBaseUri: process.env.API_URL || "http://localhost:5000"
-  //},
   head: {
     title: 'VNWA',
     meta: [
@@ -18,8 +14,6 @@ export default {
     ],
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Staatliches' },
-     //{ rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css'
-     // }
     ]
   },
 
@@ -48,14 +42,7 @@ export default {
   //'@nuxtjs/apollo',
   '@nuxtjs/axios',
   '@nuxtjs/auth'
-  ], /*
-  apollo: {  
-    clientConfigs: {
-      default: {
-        httpEndpoint: process.env.BACKEND_URL || "http://localhost:8082/graphql"
-      }
-    }
-  },  */
+  ], 
   axios: {
     baseURL: process.env.API_AUTH_URL
   }, 

@@ -24,16 +24,16 @@
 
           <ul class="list-unstyled mb-0">
             <li><icon-base icon-name="Security"><icon-security /></icon-base>
-              <a href="#!" class="text-white">A1-Injection</a>
+              <a href="https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki/A1-Injection" class="text-white">A1-Injection</a>
             </li>
             <li><icon-base icon-name="Security"><icon-security /></icon-base>
-              <a href="#!" class="text-white">A2-Broken Authentication</a>
+              <a href="https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki/A2-Broken-Authentication" class="text-white">A2-Broken Authentication</a>
             </li>
             <li><icon-base icon-name="Security"><icon-security /></icon-base>
-              <a href="#!" class="text-white">A3-Sensitive Data Exposure</a>
+              <a href="https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki/A3-Sensitive-Data-Exposure" class="text-white">A3-Sensitive Data Exposure</a>
             </li>
             <li><icon-base icon-name="Security"><icon-security /></icon-base>
-              <a href="#!" class="text-white">A5-Broken Access Control</a>
+              <a href="https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki/A5-Broken-Access-Control" class="text-white">A5-Broken Access Control</a>
             </li>
           </ul>
         </div>
@@ -45,10 +45,10 @@
 
           <ul class="list-unstyled mt-2">
             <li><icon-base viewBox="0 0 28.88 28.203" icon-name="Security"><icon-github  /></icon-base>
-              <a href="#!" class="text-white"> Github Repository</a>
+              <a href="https://github.com/SSANCA02/VulnerableNodeWebApplication" class="text-white"> Github Repository</a>
             </li>
             <li><icon-base viewBox="0 0 28.88 28.203" icon-name="Security"><icon-github  /></icon-base>
-              <a href="#!" class="text-white"> Github Wiki</a>
+              <a href="https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki" class="text-white"> Github Wiki</a>
             </li>
           </ul>
         </div>
@@ -61,7 +61,7 @@
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2020 Copyright:
-      <a class="text-white" href="#!">SSANCA02 github</a>
+      <a class="text-white" href="https://github.com/SSANCA02/">SSANCA02 github</a>
     </div>
     <!-- Copyright -->
   </footer>

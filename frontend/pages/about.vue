@@ -11,7 +11,7 @@
 						<div class="card-block block-1">
 							<h3 class="card-title">SQL injection</h3>
 							<p class="card-text">SQL injection is a method of injecting intrusive code to perform operations on a database.</p>
-							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+							<a href="https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki/A1-Injection" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
 				</div>
@@ -20,7 +20,7 @@
 						<div class="card-block block-2">
 							<h3 class="card-title">Cross-Site Scripting (XSS)</h3>
 							<p class="card-text">XSS is a type of client-side code injection attack, where an attacker executes a malicious script in a user's browser.</p>
-							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+							<a href="https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki/A7-XSS" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
 				</div>
@@ -29,7 +29,7 @@
 						<div class="card-block block-3">
 							<h3 class="card-title">CSRF</h3>
 							<p class="card-text">CSRF occurs when unauthorized commands are submitted from a user that the web application trusts.</p>
-							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+							<a href="https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki/Cross-site-request-forgery" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
 				</div>
@@ -40,7 +40,7 @@
 						<div class="card-block block-4">
 							<h3 class="card-title">Broken Authentication</h3>
 							<p class="card-text">Weak passwords, weak session ID keys, brute force or other automated attacks...</p>
-							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+							<a href="https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki/A2-Broken-Authentication" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
 				</div>
@@ -49,7 +49,7 @@
 						<div class="card-block block-5">
 							<h3 class="card-title">Sensitive Data Exposure</h3>
 							<p class="card-text">Is any data transmitted in clear text? Man-in-the-Middle, information disclosures,...</p>
-							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+							<a href="https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki/A3-Sensitive-Data-Exposure" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
 				</div>
@@ -58,7 +58,7 @@
 						<div class="card-block block-6">
 							<h3 class="card-title">Broken Access Control</h3>
 							<p class="card-text">Bypassing access control checks by modifying the URL or similar.</p>
-							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+							<a href="https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki/A5-Broken-Access-Control" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
 				</div>
@@ -69,7 +69,7 @@
 						<div class="card-block block-1">
 							<h3 class="card-title">Security Misconfiguration</h3>
 							<p class="card-text">Error handling reveals stack traces or other overly informative error messages to users.</p>
-							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+							<a href="https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki/A6-Security-Misconfiguration" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
 				</div>
@@ -78,7 +78,7 @@
 						<div class="card-block block-2">
 							<h3 class="card-title">Using Components with Known Vulnerabilities</h3>
 							<p class="card-text">Using software vulnerable, unsupported, or out of date.</p>
-							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+							<a href="https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki/A9-Components-with-known-vulnerabilities" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
 				</div>
@@ -87,7 +87,7 @@
 						<div class="card-block block-3">
 							<h3 class="card-title">Insufficient Logging & Monitoring</h3>
 							<p class="card-text">Exploitation of insufficient logging and monitoring is the bedrock of nearly every major incident.</p>
-							<a href="https://www.fiverr.com/share/qb8D02" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
+							<a href="https://github.com/SSANCA02/VulnerableNodeWebApplication/wiki/A10-Insufficient-Logging-&-Monitoring" title="Read more" class="read-more" >Read more<i class="fa fa-angle-double-right ml-2"></i></a>
 						</div>
 					</div>
 				</div>

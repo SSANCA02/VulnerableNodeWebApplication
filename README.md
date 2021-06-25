@@ -49,7 +49,7 @@ $ snap connect mysql-workbench-community:ssh-keys
 
 ```
 
-If you have MySQL installed, you can copy from database/db.sql.
+If you have MySQL installed, you can copy from backend/database/db.sql.
 
 
 ## NuxtJS Setup

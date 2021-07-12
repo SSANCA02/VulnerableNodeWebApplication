@@ -70,3 +70,7 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## OVA 
+
+[Here](https://drive.google.com/drive/folders/19UxoDptQH58x4VbkAjx3VzW7ctnMhR6k?usp=sharing) you can download OVA, check out instructions. 
